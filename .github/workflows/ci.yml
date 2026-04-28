@@ -1,17 +1,32 @@
-name: DevOps Pipeline
+name: DevOps CI pipeline
 
 on:
-push:
-branches:
--main
+  push:
+    branches:
+      - main
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-steps:
--name: checkout code
--uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
--name: run a simple script
--uses: echo "Hello, DevOps CI/CD Pipeline is working!"
+      - name: List Files
+        run: ls -la
+
+      - name: Show current Directory
+        run: pwd
+
+      - name: print system info
+        run: uname -a
+ 
+      - name: Stimulate build
+        run: echo "Building application..."
+
+      - name: Stimulate Test
+        run: echo "Running Test..."
+
+      - name: Stimulate success
+        run: echo "Build and Test Successful"
