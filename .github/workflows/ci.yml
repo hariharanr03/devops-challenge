@@ -11,22 +11,22 @@ jobs:
 
     steps:
       - name: Checkout code
-      - uses: actions/checkout/v3
+        uses: actions/checkout/v3
 
       - name: List Files
-      - run: ls -la
+        run: ls -la
 
       - name: Show current Directory
-      - run: pwd
+        run: pwd
 
       - name: print system info
-      - run: uname -a
+        run: uname -a
  
       - name: Stimulate build
-      - run: echo "Building application..."
+        run: echo "Building application..."
 
       - name: Stimulate Test
-      - run: echo "Running Test..."
+        run: echo "Running Test..."
 
       - name: Stimulate success
-      - run: echo "Build and Test Successful"
+        run: echo "Build and Test Successful"
